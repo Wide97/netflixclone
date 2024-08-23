@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from './Components/Navigation'
 import End from './Components/End'
+import Home from './Components/Home'
 
 
 
@@ -8,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Navigation/>
-      <div>Contenuto della pagina</div>
+      <Home/>
       <End/>
     
     </div>
