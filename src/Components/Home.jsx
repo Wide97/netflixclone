@@ -96,53 +96,39 @@ class Home extends Component {
 
 const MovieCarousel = ({ title, movies }) => {
   const carouselId = `carousel-${title.replace(/\s+/g, '-').toLowerCase()}`;
-  const posterHeight = '400px'; 
-  const itemsPerSlide = 6; 
-
-  
-  const generateCarouselItems = () => {
-    const slideCount = Math.ceil(movies.length / itemsPerSlide);
-
-    let carouselItems = [];
-    for (let i = 0; i < slideCount; i++) {
-      carouselItems.push(
-        <div className={`carousel-item${i === 0 ? ' active' : ''}`} key={i}>
-          <div className="d-flex" style={{ overflowX: 'auto' }}>
-            {movies.slice(i * itemsPerSlide, (i + 1) * itemsPerSlide).map((movie) => (
-              <div
-                className="text-center px-1"
-                key={movie.imdbID}
-                style={{ flex: '0 0 auto', width: '16.666%' }}
-              >
-                <img
-                  className="img-fluid"
-                  src={movie.Poster}
-                  alt={movie.Title}
-                  title={movie.Title}
-                  style={{ height: posterHeight, objectFit: 'cover' }} 
-                />
-                <p className="text-white mt-2">{movie.Title}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    }
-    return carouselItems;
-  };
 
   return (
     <div className="mb-4">
       <h4 className="text-white">{title}</h4>
       <div id={carouselId} className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
-          {generateCarouselItems()}
+          <div className="carousel-item active">
+            <div className="d-flex" style={{ overflowX: 'auto', whiteSpace: 'nowrap' }}>
+              {movies.map((movie) => (
+                <div
+                  className="text-center px-1"
+                  key={movie.imdbID}
+                  style={{ flex: '0 0 auto', width: 'auto' }}
+                >
+                  <img
+                    className="img-fluid"
+                    src={movie.Poster}
+                    alt={movie.Title}
+                    title={movie.Title}
+                    style={{ height: '400px', objectFit: 'cover', margin: '5px' }}
+                  />
+                  <p className="text-white mt-2">{movie.Title}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
         <button
           className="carousel-control-prev"
           type="button"
           data-bs-target={`#${carouselId}`}
           data-bs-slide="prev"
+          style={{ backgroundColor: '#000' }}
         >
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Previous</span>
@@ -152,6 +138,7 @@ const MovieCarousel = ({ title, movies }) => {
           type="button"
           data-bs-target={`#${carouselId}`}
           data-bs-slide="next"
+          style={{ backgroundColor: '#000' }}
         >
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
@@ -162,6 +149,7 @@ const MovieCarousel = ({ title, movies }) => {
 };
 
 export default Home;
+
 
 
 
