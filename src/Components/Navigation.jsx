@@ -42,7 +42,7 @@ class Navigation extends Component {
             <div className="d-flex align-items-center">
               <i className="bi bi-search icons" style={{ marginLeft: '0.8em', marginRight: '0.8em', fontSize: '1.2em' }}></i>
               <div id="kids" className="fw-bold" style={{ color: '#f5f5f1', fontSize: '0.8em' }}>KIDS</div>
-              <i className="bi bi-bell icons" style={{ marginLeft: '0.8em', marginRight: '0.8em', fontSize: '1.2em' }}></i>
+              <i className="bi bi-bell icons " style={{ marginLeft: '0.8em', marginRight: '0.8em', fontSize: '1.2em' }}></i>
               <i className="bi bi-person-circle icons" style={{ marginLeft: '0.8em', marginRight: '0.8em', fontSize: '1.2em' }}></i>
             </div>
           </div>
