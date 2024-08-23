@@ -5,7 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 class End extends Component {
   render() {
     return (
-      <footer className="bg-dark text-light py-4 mt-auto fixed-bottom">
+      <footer className="text-light py-4 mt-auto fixed-bottom" style={{ backgroundColor: '#101010'}}>
         <div className="container">
           <div className="row justify-content-center mb-4">
             <div className="col col-6 text-center">
